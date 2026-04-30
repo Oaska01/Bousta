@@ -32,7 +32,7 @@ class AuthController extends Controller
     // }
 
     public function login(Request $request)
-{
+    {
     $fields = $request->validate([
         'phone_number' => 'required|string|regex:/^[0-9]{8}$/',
     ]);
@@ -47,11 +47,14 @@ class AuthController extends Controller
 
     Auth::login($user);
 
-    return match($user->role) {
-        'admin'  => redirect()->route('adminHome'),
-        'driver' => redirect()->route('driverHome'),
-        default  => redirect()->route('passengerHome'),
-    };
+    // return match($user->role) {
+    //     'admin'  => redirect()->route('adminHome'),
+    //     'driver' => redirect()->route('driverHome'),
+    //     default  => redirect()->route('passengerH'),
+    // };
+
+    return  redirect()->route('adminHome');
+
 }
 
     public function registerView()

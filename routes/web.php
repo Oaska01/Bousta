@@ -21,7 +21,7 @@ Route::middleware('guest') -> group(function()
         Route::get('/verifyOtp', [AuthController::class, 'otpView'])->name('otp.show');
         Route::post('/verifyOtp', [AuthController::class, 'verifyOtp'])->name('otp.verify');
 
-        Route::get('/passenger/home', [PassengerController::class, 'passengerView']) -> name('passengerHome');
+        Route::get('/passenger/home', [PassengerController::class, 'passengerView']) -> name('passengerH');
         Route::get('/admin/home', [PassengerController::class, 'adminView']) -> name('adminHome');
         Route::get('/passenger/home', [PassengerController::class, 'driverView']) -> name('driverHome');
     }

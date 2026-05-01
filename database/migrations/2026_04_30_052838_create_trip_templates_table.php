@@ -13,7 +13,21 @@ return new class extends Migration
     {
         Schema::create('trip_templates', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('route_id')->constrained('routes')->cascadeOnDelete();
+
+             $table->time('depart_time');
+
+            $table->enum('day_of_week', [
+            'everyday', 'monday', 'tuesday', 'wednesday',
+            'thursday', 'friday', 'saturday', 'sunday'
+            ])->default('everyday');
+
             $table->timestamps();
+            // A route cannot have two templates with the same departure time and start stop
+            $table->unique(
+            ['route_id', 'day_of_week', 'depart_time'],
+            'trip_template_unique_index'
+        );
         });
     }
 

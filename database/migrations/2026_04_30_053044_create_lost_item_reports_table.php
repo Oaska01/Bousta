@@ -13,7 +13,28 @@ return new class extends Migration
     {
         Schema::create('lost_item_reports', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('passenger_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('trip_id')->nullable()->constrained('trips')->nullOnDelete();
+
+            $table->enum('category', [
+                'electronics',
+                'wallet',
+                'keys',
+                'bag',
+                'clothing',
+                'documents',
+                'other'
+            ])->default('other');
+            
+            $table->string('description');
+            $table->string('image_url')->nullable();
+            $table->enum('status', ['pending', 'matched', 'resolved'])->default('pending');
+            $table->softDeletes();
             $table->timestamps();
+
+            $table->index('status');
+            $table->index('category');
         });
     }
 

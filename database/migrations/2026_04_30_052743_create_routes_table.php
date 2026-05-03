@@ -13,10 +13,14 @@ return new class extends Migration
     {
         Schema::create('routes', function (Blueprint $table) {
             $table->id();
-            $table -> string('name');
+            $table -> string('name') -> unique();
             $table -> string('description') -> nullable();
-            $table -> foreignId('return_route_id') -> nullable() -> constrained('routes');
-            $table -> boolean('is_active') -> default(true);
+
+            $table->foreignId('start_stop_id')->constrained('stops')->cascadeOnDelete();
+            $table->foreignId('end_stop_id')->constrained('stops')->cascadeOnDelete();
+            $table->foreignId('return_route_id')->nullable()->constrained('routes')->nullOnDelete();
+
+
             $table -> enum('status', ['active', 'suspended']) -> default('active');
             $table -> softDeletes();
             $table->timestamps();

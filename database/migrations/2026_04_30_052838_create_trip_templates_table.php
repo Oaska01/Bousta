@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('route_id')->constrained('routes')->cascadeOnDelete();
 
-             $table->time('depart_time');
+            $table->time('departure_time');
 
             $table->enum('day_of_week', [
             'everyday', 'monday', 'tuesday', 'wednesday',
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->timestamps();
             // A route cannot have two templates with the same departure time and start stop
             $table->unique(
-            ['route_id', 'day_of_week', 'depart_time'],
+            ['route_id', 'day_of_week', 'departure_time'],
             'trip_template_unique_index'
         );
         });

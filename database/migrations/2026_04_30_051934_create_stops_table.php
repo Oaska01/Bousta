@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('stops', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name') -> unique();
             $table->decimal('lat', 10, 7)->nullable();
             $table->decimal('lng', 10, 7)->nullable();
             $table->timestamps();

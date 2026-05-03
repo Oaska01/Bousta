@@ -20,7 +20,7 @@ return new class extends Migration
 
         $table->time('departure_time');
         $table->integer('sequence');
-        $table->enum('status', ['scheduled', 'active', 'completed', 'cancelled'])->default('scheduled');
+        $table->enum('status', ['scheduled', 'in_progress', 'completed', 'cancelled'])->default('scheduled');
         $table->timestamps();
 
         // A shift cannot have two trips at the same departure time

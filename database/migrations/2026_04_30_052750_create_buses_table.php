@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('plate_number')->unique();
             $table->string('model');
             $table->integer('capacity');
-            $table->boolean('is_active')->default(true);
+
             $table->enum('status', ['active', 'maintenance', 'retired'])->default('active');
             $table->softDeletes();
             $table->timestamps();

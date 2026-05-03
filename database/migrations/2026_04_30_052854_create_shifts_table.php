@@ -13,12 +13,15 @@ return new class extends Migration
     {
         Schema::create('shifts', function (Blueprint $table) {
             $table->id();
+
             $table->foreignId('route_id')->constrained('routes')->cascadeOnDelete();
             $table->foreignId('driver_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('bus_id')->constrained('buses')->cascadeOnDelete();
+
             $table->date('date');
-            $table->boolean('is_active')->default(true);
             $table->timestamps();
+            
+            $table->enum('status', ['scheduled', 'in_progress', 'completed', 'cancelled'])->default('scheduled');
             // A driver cannot be assigned to two shifts on the same date
             $table->unique(['driver_id', 'date'], 'shift_driver_date_unique');
             // A bus cannot be assigned to two shifts on the same date

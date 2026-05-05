@@ -25,6 +25,7 @@ class User extends Authenticatable
         'email',
         'password',
         'phone_number',
+        'phone_verified_at',
         'role'
     ];
 
@@ -72,7 +73,7 @@ class User extends Authenticatable
         return $this->hasMany(Shift::class, 'driver_id');
     }
 
-    public function availability(): HasMany
+    public function driverAvailability(): HasMany
     {
         return $this->hasMany(DriverAvailability::class, 'driver_id');
     }

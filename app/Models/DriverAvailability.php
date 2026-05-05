@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class DriverAvailability extends Model
 {
+
+    protected $table = 'driver_availability';
+
     protected $fillable =
     [
         'driver_id',

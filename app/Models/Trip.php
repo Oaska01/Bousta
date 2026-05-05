@@ -20,7 +20,8 @@ class Trip extends Model
     ];
 
     protected $casts = [
-        'departure_time' => 'datetime:H:i',
+        'departure_time' => 'datetime',
+        'sequence'       => 'integer',
     ];
 
     public function tripTemplate() : BelongsTo

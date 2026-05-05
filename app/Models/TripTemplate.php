@@ -20,7 +20,7 @@ class TripTemplate extends Model
      * Cast attributes to specific types for easier manipulation.
      */
     protected $casts = [
-        'departure_time' => 'datetime:H:i', // Treat as time
+        // 'departure_time' => 'datetime:H:i', // Treat as time
     ];
 
     public function route() : BelongsTo

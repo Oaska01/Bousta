@@ -110,7 +110,7 @@
             {{-- Login link --}}
             <p class="text-center mb-0" style="font-size:13px;color:#888780;">
                 Already have an account?
-                <a href="{{ route('loginView') }}"
+                <a href="{{ route('login.view') }}"
                    style="color:#085041;font-weight:500;text-decoration:none;">
                     Login
                 </a>

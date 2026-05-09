@@ -58,12 +58,20 @@
                     </form>
                 @else
                     {{-- Guest --}}
-                    <a href="{{ route('loginView') }}"
+                    <a href="{{ route('login.view') }}"
                        style="font-size:13px;color:#E1F5EE;background:transparent;
                               border:0.5px solid #5DCAA5;border-radius:6px;
                               padding:5px 14px;text-decoration:none;">
                         Login
                     </a>
+                    <a href="{{ route('login.viewStaff') }}"
+                       style="font-size:13px;color:#E1F5EE;background:transparent;
+                              border:0.5px solid #5DCAA5;border-radius:6px;
+                              padding:5px 14px;text-decoration:none;">
+                        Login Staff
+                    </a>
+
+
                 @endauth
 
             </div>

@@ -36,7 +36,7 @@
             @endif
 
             {{-- Form --}}
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="#">
                 @csrf
 
                 <div class="mb-3">
@@ -73,7 +73,7 @@
             {{-- Register link --}}
             <p class="text-center mb-0" style="font-size:13px;color:#888780;">
                 Don't have an account?
-                <a href="{{ route('registerView') }}"
+                <a href="{{ route('register.view') }}"
                    style="color:#085041;font-weight:500;text-decoration:none;">
                     Register
                 </a>

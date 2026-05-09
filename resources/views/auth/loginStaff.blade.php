@@ -27,7 +27,7 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('staff.login.submit') }}">
+        <form method="POST" action="{{ route('login.staff') }}">
             @csrf
 
             <div class="mb-3">
@@ -77,7 +77,7 @@
 
         <p class="text-center mb-0" style="font-size:13px;color:#888780;">
             Are you a passenger?
-            <a href="{{ route('login') }}"
+            <a href="{{ route('login.view') }}"
                style="color:#085041;font-weight:500;text-decoration:none;">
                 Login here
             </a>

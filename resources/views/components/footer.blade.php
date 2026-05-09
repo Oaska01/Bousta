@@ -48,7 +48,7 @@
                         Account
                     </h6>
                     @guest
-                        <a href="{{ route('login') }}"
+                        <a href="#"
                            style="display:block;font-size:13px;color:#9FE1CB;
                                   text-decoration:none;margin-bottom:6px;opacity:0.8;">
                             Login

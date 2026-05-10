@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    function adminHome()
+    function home()
     {
-        return view('adminHome');
+        return view('admin.home');
     }
 }

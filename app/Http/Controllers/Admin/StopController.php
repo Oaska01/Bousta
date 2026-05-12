@@ -60,6 +60,7 @@ class StopController extends Controller
 
     public function destroy(Stop $stop)
     {
+        $stop -> delete();
         return redirect() -> route('admin.stops.index')
         -> with('success', 'Stop Is Deleted Successfully');
     }

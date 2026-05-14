@@ -11,7 +11,7 @@
 
     <div class="mb-4">
       <h1 style="font-size:22px;font-weight:500;color:#085041;margin-bottom:4px;">Create trip template</h1>
-      <p style="font-size:13px;color:#888780;margin:0;">Define a recurring departure pattern</p>
+      <p style="font-size:13px;color:#888780;margin:0;">Define a recurring departureure pattern</p>
     </div>
 
     <div style="background:#fff;border-radius:12px;border:0.5px solid #d3d1c7;padding:1.5rem;">
@@ -35,11 +35,11 @@
         </div>
 
         <div class="mb-3">
-          <label for="depart_time" class="form-label" style="font-size:13px;font-weight:500;color:#444441;">Departure time</label>
-          <input type="time" id="depart_time" name="depart_time"
-                 class="form-control @error('depart_time') is-invalid @enderror"
-                 value="{{ old('depart_time') }}" required>
-          @error('depart_time')<div class="invalid-feedback">{{ $message }}</div>@enderror
+          <label for="departure_time" class="form-label" style="font-size:13px;font-weight:500;color:#444441;">departure time</label>
+          <input type="time" id="departure_time" name="departure_time"
+                 class="form-control @error('departure_time') is-invalid @enderror"
+                 value="{{ old('departure_time') }}" required>
+          @error('departure_time')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
         <div class="mb-4">

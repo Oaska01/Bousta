@@ -46,7 +46,7 @@
                 {{ $template->route->name ?? '—' }}
               </td>
               <td style="font-size:13px;color:#085041;font-weight:500;padding:12px 1rem;border-color:#f1efef;">
-                {{ \Carbon\Carbon::parse($template->depart_time)->format('H:i') }}
+                {{ \Carbon\Carbon::parse($template->departure_time)->format('H:i') }}
               </td>
               <td style="padding:12px 1rem;border-color:#f1efef;">
                 <span style="font-size:11px;padding:3px 10px;border-radius:20px;background:#E1F5EE;color:#085041;font-weight:500;text-transform:capitalize;">

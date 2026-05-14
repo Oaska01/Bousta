@@ -37,9 +37,9 @@
 
         <div class="mb-3">
           <label for="depart_time" class="form-label" style="font-size:13px;font-weight:500;color:#444441;">Departure time</label>
-          <input type="time" id="depart_time" name="depart_time"
-                 class="form-control @error('depart_time') is-invalid @enderror"
-                 value="{{ old('depart_time', \Carbon\Carbon::parse($template->depart_time)->format('H:i')) }}" required>
+          <input type="time" id="departure_time" name="departure_time"
+                 class="form-control @error('departure_time') is-invalid @enderror"
+                 value="{{ old('departure_time', \Carbon\Carbon::parse($template->departure_time)->format('H:i')) }}" required>
           @error('depart_time')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 

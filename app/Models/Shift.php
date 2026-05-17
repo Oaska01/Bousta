@@ -18,6 +18,11 @@ class Shift extends Model
         'status'
     ];
 
+    // This tells Laravel to cast date to a Carbon instance automatically.
+    protected $casts = [
+    'date' => 'date',
+    ];
+
     public function bus() : BelongsTo
     {
         return $this -> belongsTo(Bus::class);
@@ -36,4 +41,5 @@ class Shift extends Model
     {
         return $this -> hasMany(Trip::class)->orderBy('sequence', 'asc');
     }
+
 }
